@@ -5,10 +5,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Layout 2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        nav {
+            grid-area: nav;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .ad {
+            grid-area: ad;
+        }
+
+        body {
+            height: calc(100vh - 40px);
+            margin: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            font-size: 16px;
+            background-color: #f4f4f4;
+            display: grid;
+            grid-template-areas:
+                "header header  header"
+                "nav    main    sidebar"
+                "nav    main    ad"
+                "footer footer  footer";
+            ;
+            gap: 20px;
+
+        }
+
+        header {
+            background: #333;
+            color: #f4f4f4;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background: #333;
+            color: #f4f4f4;
+            padding: 15px;
+        }
+
+        nav ul {
+            list-style: none;
+
+        }
+
+        nav ul li {
+            padding: 0 10px;
+        }
+
+        nav ul li a {
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+
+        nav ul li:hover {
+            background: #555;
+        }
+
+        main {
+            color: #f4f4f4;
+            background: #333;
+            padding: 20px;
+        }
+
+        .sidebar {
+            background: #333;
+            color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .ad {
+            background: #333;
+            color: #f4f4f4;
+            padding: 20px;
+        }
+
+        footer {
+            background: #333;
+            color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 576px) {
+            body {
+                /* height: auto; */
+                grid-template-areas:
+                    "header"
+                    "nav"
+                    "main"
+                    "sidebar"
+                    "ad"
+                    "footer"
+                ;
+            }
+
+            nav ul {
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 768px) and (min-width: 577px) {
+            body {
+                /* height: auto; */
+                grid-template-areas:
+                    "header     header      header"
+                    "nav        nav         nav"
+                    "sidebar    main        main"
+                    "ad         footer      footer"
+                ;
+            }
+
+            nav ul {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
+    <header>
+        <h1>The Header</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Main Article Area</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat ducimus aperiam veritatis, dolorum quia
+            autem? Quo, saepe eius molestias ab quod minus iusto quis laudantium deleniti iste dicta incidunt? Officiis!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nam pariatur, quo molestiae eius reiciendis
+            fugiat eos ducimus voluptatem repellendus.
+        </p>
+    </main>
+    <div class="sidebar">Sidebar</div>
+    <div class="ad">Advertising</div>
+    <footer>
+        <h1>The Footer</h1>
+    </footer>
 </body>
 
 </html>
